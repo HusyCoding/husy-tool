@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * @author: husy
  * @date 2020/1/13
  */
-public class RegExUtil {
+public class RegExUtils {
 	/**
 	 * 判断一个字符是否是汉字
 	 * PS：中文汉字的编码范围：[\u4e00-\u9fa5]
@@ -53,7 +53,6 @@ public class RegExUtil {
 	public static boolean isEmail(String number){
 		return false;
 	}
-
 	public static boolean isTelephone(String telephone){
 		return false;
 	}

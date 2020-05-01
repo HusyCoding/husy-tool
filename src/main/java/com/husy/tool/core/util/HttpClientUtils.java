@@ -1,6 +1,5 @@
-package com.husy.tool.core;
+package com.husy.tool.core.util;
 
-import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
@@ -25,7 +24,7 @@ import java.util.*;
  * @author: husy
  * @date 2020/4/7
  */
-public class HttpClientUtil {
+public class HttpClientUtils {
 	public static void main(String[] args) {
 		try {
 			String url="http://192.168.1.16:18095/dcrole/bas-data-source/login";

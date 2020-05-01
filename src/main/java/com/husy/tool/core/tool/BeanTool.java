@@ -1,4 +1,4 @@
-package com.husy.tool.core;
+package com.husy.tool.core.tool;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -13,11 +13,11 @@ import java.util.Map;
  * @date 2020/1/13
  */
 @Component
-public class BeanUtil implements ApplicationContextAware {
+public class BeanTool implements ApplicationContextAware {
 	private static ApplicationContext applicationContext;
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		BeanUtil.applicationContext=applicationContext;
+		BeanTool.applicationContext=applicationContext;
 	}
 
 	public static <T> T getBean(String beanName) {

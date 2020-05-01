@@ -1,4 +1,4 @@
-package com.husy.tool.web;
+package com.husy.tool.core;
 
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -13,7 +13,7 @@ import java.util.Map;
  * @author: husy
  * @date 2020/1/13
  */
-public class HttpServletUtil {
+public class HttpServletUtils {
 	/**
 	 * 尝试获取当前请求的HttpServletRequest实例
 	 *

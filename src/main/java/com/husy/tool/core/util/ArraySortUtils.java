@@ -1,4 +1,4 @@
-package com.husy.tool.core;
+package com.husy.tool.core.util;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author: husy
  * @date 2020/1/13
  */
-public class ArraySortUtil {
+public class ArraySortUtils {
 	/**
 	 * bubbleSort sorting them ascending
 	 *

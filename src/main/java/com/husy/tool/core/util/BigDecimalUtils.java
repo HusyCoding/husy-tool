@@ -1,13 +1,13 @@
-package com.husy.tool.core;
+package com.husy.tool.core.util;
 
 import java.math.BigDecimal;
 
 /**
- * @Description: BigDecima 运算工具
+ * @Description: BigDecimal 运算工具
  * @author: husy
  * @date 2020/1/13
  */
-public class BigDecimalUtil {
+public class BigDecimalUtils {
 
 	/**
 	 * Add big decimal.
@@ -21,10 +21,6 @@ public class BigDecimalUtil {
 		BigDecimal b1 = BigDecimal.valueOf(v1);
 		BigDecimal b2 = BigDecimal.valueOf(v2);
 		return b1.add(b2);
-	}
-
-	public static void main(String[] args) {
-		System.out.println(BigDecimalUtil.mul(0.24,0.031));
 	}
 
 	/**
