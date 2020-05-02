@@ -1,12 +1,14 @@
 package com.husy.tool.core.api;
 
-import com.alibaba.fastjson.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * @description: Json 格式的API响应对象
+ * @description: API响应对象
  * @author: husy
  * @date 2020/4/29
  */
-public class APIResult extends JSONObject {
+public class APIResult extends HashMap {
 	private static final String RESULT_KEY_CODE = "code";
 	private static final String RESULT_KEY_MESSAGE = "message";
 	private static final String RESULT_KEY_DATA = "data";
@@ -23,7 +25,7 @@ public class APIResult extends JSONObject {
 		put(RESULT_KEY_CODE, apiCode.getCode());
 		put(RESULT_KEY_MESSAGE, apiCode.getMessage());
 	}
-	public static JSONObject success() {
+	public static APIResult success() {
 		return new APIResult();
 	}
 	public static APIResult fail(APICode apiCode) {
@@ -41,11 +43,11 @@ public class APIResult extends JSONObject {
 		if (page == null) {
 			throw new RuntimeException("The page must not be null");
 		}
-		APIResult resultObj = new APIResult();
-		resultObj.put(PAGE_KEY_TOTAL, page.getTotal());
-		resultObj.put(PAGE_KEY_RECORDS, page.getRecords());
-		resultObj.put(PAGE_KEY_SIZE, page.getSize());
-		resultObj.put(PAGE_KEY_CURRENT, page.getCurrent());
-		return resultObj;
+		Map<String,Object> pageObj = new HashMap<>(4);
+		pageObj.put(PAGE_KEY_TOTAL, page.getTotal());
+		pageObj.put(PAGE_KEY_RECORDS, page.getRecords());
+		pageObj.put(PAGE_KEY_SIZE, page.getSize());
+		pageObj.put(PAGE_KEY_CURRENT, page.getCurrent());
+		return APIResult.data(pageObj);
 	}
 }
