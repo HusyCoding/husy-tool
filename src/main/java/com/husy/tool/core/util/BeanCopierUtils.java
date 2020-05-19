@@ -10,7 +10,7 @@ import java.util.Map;
  * @author: hsy
  * @date; 2020/5/2
  */
-public class CglibBeanCopierUtils {
+public class BeanCopierUtils {
 	/**
 	 * 把创建过的BeanCopier实例放到缓存中，避免反复创建，消耗资源。
 	 */
@@ -25,7 +25,7 @@ public class CglibBeanCopierUtils {
 	 * @param source 资源类
 	 * @param target 目标类
 	 */
-	public static void copy(Object source, Object target) {
+	public static void copyProperties(Object source, Object target) {
 		String beanKey = generateKey(source.getClass(), target.getClass());
 		BeanCopier copier;
 		if (!BEAN_COPIERS.containsKey(beanKey)) {

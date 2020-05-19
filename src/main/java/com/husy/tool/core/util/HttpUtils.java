@@ -24,7 +24,7 @@ import java.util.*;
  * @author: husy
  * @date 2020/4/7
  */
-public class HttpClientUtils {
+public class HttpUtils {
 	public static void main(String[] args) {
 		try {
 			String url="http://192.168.1.16:18095/dcrole/bas-data-source/login";
