@@ -1,6 +1,6 @@
 package com.husy.tool;
 
-import cn.hutool.core.collection.CollUtil;
+import com.husy.tool.core.util.NumberUtils;
 
 /**
  * @description: 测试类
@@ -9,8 +9,8 @@ import cn.hutool.core.collection.CollUtil;
  */
 public class Test {
 	public static void main(String[] args) {
-		Integer a = new Integer(1);
+		Integer a = null;
 		int b =1;
-		System.out.println(a.equals(b));
+		System.out.println(NumberUtils.equals(a,b));
 	}
 }

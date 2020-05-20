@@ -1,5 +1,7 @@
 package com.husy.tool.core.util;
 
+import cn.hutool.core.util.ArrayUtil;
+
 import java.util.Objects;
 
 /**
@@ -27,6 +29,17 @@ public class StringUtils {
 		return str == null || str.length() == 0;
 	}
 
+
+	/**
+	 * 字符串是否不为空
+	 *
+	 * @param str 被检测的字符串
+	 * @return 是否为空
+	 */
+	public static boolean isNotEmpty(String str) {
+		return !isEmpty(str);
+	}
+
 	/**
 	 * 字符串是否为空白，空定义如下:<br>
 	 * 1、为null<br>
@@ -48,16 +61,6 @@ public class StringUtils {
 	}
 
 	/**
-	 * 字符串是否不为空
-	 *
-	 * @param str 被检测的字符串
-	 * @return 是否为空
-	 */
-	public static boolean isNotEmpty(String str) {
-		return !isEmpty(str);
-	}
-
-	/**
 	 * 字符串是否为非空白，
 	 *
 	 * @param str
@@ -66,7 +69,42 @@ public class StringUtils {
 	public static boolean isTrimNotEmpty(String str) {
 		return !isTrimEmpty(str);
 	}
+	/**
+	 * 是否包含空字符串
+	 *
+	 * @param strs 字符串列表
+	 * @return 是否包含空字符串
+	 */
+	public static boolean hasEmpty(String... strs) {
+		if (ArrayUtil.isEmpty(strs)) {
+			return true;
+		}
 
+		for (String str : strs) {
+			if (isEmpty(str)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	/**
+	 * 是否包含空白字符串
+	 *
+	 * @param strs 字符串列表
+	 * @return 是否包含空白字符串
+	 */
+	public static boolean hasTrimEmpty(String... strs) {
+		if (ArrayUtil.isEmpty(strs)) {
+			return true;
+		}
+
+		for (String str : strs) {
+			if (isTrimEmpty(str)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	/**
 	 * 比较两个字符串是否相等
 	 *
