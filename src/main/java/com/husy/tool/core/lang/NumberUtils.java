@@ -1,13 +1,16 @@
-package com.husy.tool.core.util;
+package com.husy.tool.core.lang;
 
 import java.math.BigDecimal;
 
 /**
- * @Description: BigDecimal 运算工具
+ * @description: 数值操作对象
  * @author: husy
- * @date 2020/1/13
+ * @date 2020/5/20
  */
-public class BigDecimalUtils {
+public class NumberUtils {
+	public static boolean equals(Integer num1, Integer num2) {
+		return num1 != null ? num1.equals(num2) : num2 == null;
+	}
 
 	/**
 	 * Add big decimal.

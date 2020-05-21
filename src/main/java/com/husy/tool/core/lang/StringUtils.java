@@ -1,4 +1,4 @@
-package com.husy.tool.core.util;
+package com.husy.tool.core.lang;
 
 import cn.hutool.core.util.ArrayUtil;
 

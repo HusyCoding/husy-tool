@@ -1,4 +1,4 @@
-package com.husy.tool.core.util;
+package com.husy.tool.core.util.date;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
