@@ -1,7 +1,34 @@
 # 简介
+husy-tool 是一个 Java 工具类库，收集一些工作中常用的通用工具。
 
-husy-tool 是一个 Java 工具类库，在全面集成 Hutool 上进行工具类二次收集的一个类库。
+# 项目结构
+> com.husytool
+> ─core
+> │	├─api
+> │	│	├─APICode	//API响应码
+> │	│	├─APIResult	//API响应对象
+> │	│	├─Page	//分页对象
+> │	├─lang
+> │	│	├─ArraySortUtils	//数组排序工具
+> │	│	├─NumberUtils	//数值操作工具
+> │	│	├─StringUtils		//字符串操作工具
+> │	├─util
+> │	│	├─BeanCopierUtils	//基于Cglib实现的bean属性拷贝工具
+> │	│	├─CollectionUtils	//Collection操作工具
+> │	│	├─DateUtils		//日期操作工具
+> │	│	├─EasypoiUtils	//基于EasyPoi实现的报表工具
+> │	│	├─MapUtils		//Map操作工具
+> │	│	├─RandomUtils	//随机工具
+> ─web
+> │	├─BeanTool 	//Spring Bean 对象工具
+> │	├─GlobalExceptionHandler	//API全局异常处理器
+> │	├─HttpServletUtils	//HttpServletRequest 工具处理类
+> │	├─WebException	//API 接口异常类
 
-虽然觉得 Hutool 是一个非常强大的国内开源项目。但是偶尔在实际工作中，还会遇到一些无法满足的情况
 
-故诞生了 husy-tool ，作为一个站在巨人肩上继续完善的工具类库
+
+# 优秀工具类推荐
+
+* Apache common包
+* Google Guava包
+* Hutool包

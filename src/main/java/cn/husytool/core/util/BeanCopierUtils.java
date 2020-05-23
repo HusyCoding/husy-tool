@@ -1,4 +1,4 @@
-package com.husy.tool.core.util;
+package cn.husytool.core.util;
 
 import net.sf.cglib.beans.BeanCopier;
 

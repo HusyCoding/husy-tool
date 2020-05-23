@@ -1,4 +1,4 @@
-package com.husy.tool.core.util;
+package cn.husytool.core.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

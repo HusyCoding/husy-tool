@@ -1,4 +1,4 @@
-package com.husy.tool;
+package cn.husytool;
 
 import com.husy.tool.core.util.NumberUtils;
 

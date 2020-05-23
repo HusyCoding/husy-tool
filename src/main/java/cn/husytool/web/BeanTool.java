@@ -1,4 +1,4 @@
-package com.husy.tool.core.tool;
+package cn.husytool.web;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

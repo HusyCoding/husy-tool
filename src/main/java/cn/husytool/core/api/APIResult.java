@@ -1,4 +1,4 @@
-package com.husy.tool.core.api;
+package cn.husytool.core.api;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +27,9 @@ public class APIResult extends HashMap {
 	}
 	public static APIResult success() {
 		return new APIResult();
+	}
+	public static APIResult fail() {
+		return new APIResult(APICode.FAILED);
 	}
 	public static APIResult fail(APICode apiCode) {
 		return new APIResult(apiCode);

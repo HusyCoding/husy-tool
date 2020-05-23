@@ -1,6 +1,6 @@
-package com.husy.tool.web.exception;
+package cn.husytool.web;
 
-import com.husy.tool.core.api.APIResult;
+import cn.husytool.core.api.APIResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 

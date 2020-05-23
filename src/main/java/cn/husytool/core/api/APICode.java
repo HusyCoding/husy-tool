@@ -1,4 +1,4 @@
-package com.husy.tool.core.api;
+package cn.husytool.core.api;
 
 /**
  * @description: API统一响应码

@@ -1,4 +1,4 @@
-package com.husy.tool.core.util;
+package cn.husytool.core.util;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;

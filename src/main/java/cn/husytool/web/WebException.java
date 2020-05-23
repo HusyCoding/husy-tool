@@ -1,7 +1,7 @@
-package com.husy.tool.web.exception;
+package cn.husytool.web;
 
 
-import com.husy.tool.core.api.APICode;
+import cn.husytool.core.api.APICode;
 
 /**
  * @description: API 接口异常类

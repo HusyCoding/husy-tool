@@ -1,4 +1,4 @@
-package com.husy.tool.core.lang;
+package cn.husytool.core.lang;
 
 import java.util.Arrays;
 
