@@ -24,24 +24,7 @@ import java.util.*;
  * @author: husy
  * @date 2020/4/7
  */
-public class HttpUtils {
-	public static void main(String[] args) {
-		try {
-			String url="http://192.168.1.16:18095/dcrole/bas-data-source/login";
-			Map<String,String> params = new HashMap<>(2);
-			params.put("dcEntId","cjl");
-			params.put("isMStation","1");
-//			JSONObject jsonObject = new JSONObject();
-//			jsonObject.put("dcEntId","1");
-//			jsonObject.put("isMStation",1);
-
-			Map<String,Object> result = httpPost(url,params,null,null);
-			System.out.println("响应结果"+result);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
+public class HttpClientUtils {
 	/**
 	 * 编码格式。发送编码格式统一用UTF-8
 	 */
