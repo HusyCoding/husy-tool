@@ -1,45 +1,62 @@
 package cn.husytool.core.api;
 
 /**
- * @description: API统一响应码
- * 具体编码设计
- * 第1位（固定,用x标识，没有特殊设计含义，只是为了方便存储））
- * 第2位（错误级别，1为非系统bug,2为系统bug需要改代码）
- * 第3-4位（功能模块,从01开始，依次顺延）
- * 第5-8位（错误编码，从0001开始，依次顺延）
+ * API统一响应码
+ * 全平台系统统一响应码（长度8位），具体编码设计规则如下：
+ * 第1位：固定位,用x标识，没有特殊设计含义，只是为了方便存储
+ * 第2位：错误级别，1:非系统异常（BUG修复不了）,2:系统异常（BUG必须修复）
+ * 第3-4位：功能模块：
+ * ==========错误级别1：包含（01:网络错误，02:外部系统错误）
+ * ==========错误级别2：包含（03:参数错误，04:权限错误，05:业务错误）
+ * 第5-8位（错误内容，每类模块都从0001开始递增）
  * 实例：x1010001
  * @author: husy
  * @date 2020/4/27
  */
 public enum APICode {
-	//基本响应码
-	SUCCESS("00", "请求成功"),
-	FAILED("01", "请求失败"),
-	SYSTEM_ERROR("-9999", "服务器繁忙,请稍后再试"),
-	// 01权限验证模块
-	AUTHORIZATION_UNKNOWN_IP("x1010001","未授权IP"),
-	AUTHORIZATION_BLACK_IP("x1010002","黑名单IP"),
-	AUTHORIZATION_LOGIN_OVERTIME("x1010003","TOKEN失效"),
-	AUTHORIZATION_LOGIN_FAILED("x1010004","用户名或密码错误"),
-	AUTHORIZATION_PERMISSION_DENIED("x1010005","访问权限不足"),
+    //特殊响应码
+    SUCCESS("0", "请求成功"),
+    FAILED("1", "请求失败"),
+    UNKNOWN_ERROR("x9999999","服务器繁忙，请稍后重试"),
 
-	// 02报表查询模块
-	STATISTIC_PARAM_NULL("x1020001","参数不能为空"),
-	STATISTIC_PARAM_INVALID("x1020002","无效请求参数"),
-	;
-	private String code;
-	private String message;
+    // 01:网络错误
+    TIMEOUT_NETWORK("x1010001","连接超时"),
+    // 02:外部系统错误
+    SYSTEM_API("x1020001","API接口异常"),
+    NOT_FOUND_API("x1020002","API接口地址错误"),
+    DENIED_API("x1020003","API拒绝访问"),
 
-	APICode(String code, String message) {
-		this.code = code;
-		this.message = message;
-	}
+    // 03:参数错误
+    NULL_PARAM("x2030001", "参数不能为空"),
+    INVALID_PARAM("x2030002", "无效请求参数"),
+    DATA_EXISTED("x2030003","数据已存在"),
+    DATA_NOT_FOUND("x2030004","数据未找到"),
 
-	public String getCode() {
-		return code;
-	}
+    // 04:权限错误
+    UNKNOWN_IP_AUTHORIZATION("x2040001", "未授权IP"),
+    BLACK_IP_AUTHORIZATION("x2040002", "黑名单IP"),
+    LOGIN_OVERTIME_AUTHORIZATION("x2040003", "登录失效"),
+    LOGIN_FAILED_AUTHORIZATION("x2040004", "用户名或密码错误"),
+    PERMISSION_DENIED_AUTHORIZATION("x2040005", "访问权限不足"),
 
-	public String getMessage() {
-		return message;
-	}
+    // 05:业务错误
+
+
+
+    ;
+    private String code;
+    private String message;
+
+    APICode(String code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }

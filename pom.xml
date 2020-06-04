@@ -11,7 +11,7 @@
         <springboot.version>2.1.7.RELEASE</springboot.version>
         <hutool.version>5.1.0</hutool.version>
         <httpclient.version>4.5.12</httpclient.version>
-        <fastjson.version>1.2.45</fastjson.version>
+        <jackson.version>2.11.0</jackson.version>
     </properties>
 
     <dependencies>
@@ -57,6 +57,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.10</version>
+        </dependency>
+        <!--Jackson 依赖，jackson-databind 依赖 jackson-core 和 jackson-annotations-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 
