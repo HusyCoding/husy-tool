@@ -24,6 +24,7 @@ com.husytool
  │	│	├─HttpClientUtils   // HttpClient工具类
  │	│	├─JacksonUtils      // Jackson工具类
  │	│	├─MapUtils          // Map操作工具
+ │	│	├─PropertiesUtils   // 配置文件工具类
  │	│	├─RandomUtils       // 随机工具
  │	│	├─RegExUtils        // 常用正则校验工具
  ─web
