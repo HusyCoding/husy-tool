@@ -8,10 +8,6 @@ husy-tool 是一个 Java 工具类库，收集一些工作中常用的通用工�
 ```
 com.husytool
  ─core
- │	├─api
- │	│	├─APICode       // API响应码
- │	│	├─APIResult     // API响应对象
- │	│	├─Page          // 分页对象
  │	├─lang
  │	│	├─ArraySortUtils    // 数组排序工具
  │	│	├─NumberUtils       // 数值操作工具
@@ -28,11 +24,15 @@ com.husytool
  │	│	├─RandomUtils       // 随机工具
  │	│	├─RegExUtils        // 常用正则校验工具
  ─web
- │	├─ApplicationContextUtils   // Spring上下文工具类
- │	├─GlobalExceptionHandler    // API全局异常处理器
- │	├─HttpServletUtils          // HttpServletRequest 工具处理类
- │	├─WebException              // API 接口异常类
-
+ │	├─api
+ │	│	├─GlobalExceptionHandler    // 全局异常处理器
+ │	│	├─Page                      // 分页对象
+ │	│	├─ResponseCode              // API响应码
+ │	│	├─ResponseEntity            // API响应对象
+ │	│	├─WebException              // 自定义异常
+ │	├─util
+ │	│	├─ApplicationContextUtils   // Spring上下文工具类
+ │	│	├─HttpServletUtils          // HttpServletRequest 工具处理类
 ```
 
 # 优秀工具类推荐

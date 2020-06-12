@@ -1,4 +1,4 @@
-package cn.husytool.core.api;
+package cn.husytool.web.api;
 
 /**
  * API统一响应码
@@ -13,24 +13,27 @@ package cn.husytool.core.api;
  * @author: husy
  * @date 2020/4/27
  */
-public enum APICode {
+public enum ResponseCode {
     //特殊响应码
     SUCCESS("0", "请求成功"),
     FAILED("1", "请求失败"),
+    //未知异常，友好提示处理
     UNKNOWN_ERROR("x9999999","服务器繁忙，请稍后重试"),
 
     // 01:网络错误
     TIMEOUT_NETWORK("x1010001","连接超时"),
+
     // 02:外部系统错误
     SYSTEM_API("x1020001","API接口异常"),
     NOT_FOUND_API("x1020002","API接口地址错误"),
     DENIED_API("x1020003","API拒绝访问"),
 
     // 03:参数错误
-    NULL_PARAM("x2030001", "参数不能为空"),
-    INVALID_PARAM("x2030002", "无效请求参数"),
-    DATA_EXISTED("x2030003","数据已存在"),
-    DATA_NOT_FOUND("x2030004","数据未找到"),
+    FAILED_VALID_PARAM("x2030001", "参数校验失败"),
+    NULL_PARAM("x2030002", "参数不能为空"),
+    INVALID_PARAM("x2030003", "无效请求参数"),
+    DATA_EXISTED("x2030004","数据已存在"),
+    DATA_NOT_FOUND("x2030005","数据未找到"),
 
     // 04:权限错误
     UNKNOWN_IP_AUTHORIZATION("x2040001", "未授权IP"),
@@ -47,7 +50,7 @@ public enum APICode {
     private String code;
     private String message;
 
-    APICode(String code, String message) {
+    ResponseCode(String code, String message) {
         this.code = code;
         this.message = message;
     }

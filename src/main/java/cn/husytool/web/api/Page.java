@@ -1,4 +1,4 @@
-package cn.husytool.core.api;
+package cn.husytool.web.api;
 
 import java.io.Serializable;
 import java.util.Collections;

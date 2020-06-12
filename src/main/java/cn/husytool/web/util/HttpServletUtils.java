@@ -1,4 +1,4 @@
-package cn.husytool.web;
+package cn.husytool.web.util;
 
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
