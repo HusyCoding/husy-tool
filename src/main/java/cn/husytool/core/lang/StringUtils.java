@@ -1,7 +1,5 @@
 package cn.husytool.core.lang;
 
-import cn.hutool.core.util.ArrayUtil;
-
 import java.util.Objects;
 
 /**
@@ -76,7 +74,7 @@ public class StringUtils {
 	 * @return 是否包含空字符串
 	 */
 	public static boolean hasEmpty(String... strs) {
-		if (ArrayUtil.isEmpty(strs)) {
+		if (strs == null || strs.length == 0) {
 			return true;
 		}
 
@@ -94,7 +92,7 @@ public class StringUtils {
 	 * @return 是否包含空白字符串
 	 */
 	public static boolean hasTrimEmpty(String... strs) {
-		if (ArrayUtil.isEmpty(strs)) {
+		if (strs == null || strs.length == 0) {
 			return true;
 		}
 

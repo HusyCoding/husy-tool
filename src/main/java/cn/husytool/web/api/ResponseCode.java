@@ -15,8 +15,8 @@ package cn.husytool.web.api;
  */
 public enum ResponseCode {
     //特殊响应码
-    SUCCESS("0", "请求成功"),
-    FAILED("1", "请求失败"),
+    SUCCESS("0000", "请求成功"),
+    FAILED("1000", "请求失败"),
     //未知异常，友好提示处理
     UNKNOWN_ERROR("x9999999","服务器繁忙，请稍后重试"),
 

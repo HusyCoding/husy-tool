@@ -54,7 +54,7 @@ public class ResponseEntity extends LinkedHashMap implements Serializable {
         return new ResponseEntity(ResponseCode.UNKNOWN_ERROR);
     }
 
-    public static ResponseEntity data(T object) {
+    public static ResponseEntity data(Object object) {
         ResponseEntity apiResult = ResponseEntity.success();
         apiResult.put(RESULT_KEY_DATA, object);
         return apiResult;
