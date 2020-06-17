@@ -27,9 +27,9 @@ com.husytool
  ─web
  │	├─api
  │	│	├─GlobalExceptionHandler    // 全局异常处理器
- │	│	├─Page                      // 分页对象
- │	│	├─ResponseCode              // API响应码
- │	│	├─ResponseEntity            // API响应对象
+ │	│	├─PageEntity                // 自定义分页对象
+ │	│	├─ResponseCode              // 自定义API响应码
+ │	│	├─ResponseEntity            // 自定义API响应对象
  │	│	├─WebException              // 自定义异常
  │	├─util
  │	│	├─ApplicationContextUtils   // Spring上下文工具类

@@ -32,6 +32,6 @@ public class WebException extends RuntimeException {
 
     @Override
     public String toString() {
-        return "APIException:-->>" + apiCode.toString();
+        return "WebException:-->>" + apiCode.toString();
     }
 }

@@ -5,27 +5,27 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @description: 分页对象
+ * @description: 自定义分页对象
  * @author: husy
  * @date 2020/4/30
  */
-public class Page<T> implements Serializable {
-	private List<T> records;
-	private long total;
-	private long size;
+public class PageEntity<T> implements Serializable {
 	private long current;
+	private long size;
+	private long total;
+	private List<T> records;
 
-	public Page() {
+	public PageEntity() {
 		this.records = Collections.emptyList();
 		this.total = 0L;
 		this.size = 10L;
 		this.current = 1L;
 	}
-	public Page(long current, long size) {
+	public PageEntity(long current, long size) {
 		this(current, size, 0L);
 	}
 
-	public Page(long current, long size, long total) {
+	public PageEntity(long current, long size, long total) {
 		this.records = Collections.emptyList();
 		this.total = 0L;
 		this.size = 10L;

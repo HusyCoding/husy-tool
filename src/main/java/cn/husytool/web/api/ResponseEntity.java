@@ -1,37 +1,33 @@
 package cn.husytool.web.api;
 
-import org.apache.poi.ss.formula.functions.T;
-
 import java.io.Serializable;
-import java.util.LinkedHashMap;
 
 /**
- * @description: API响应对象
+ * 自定义接口响应对象
+ *
  * @author: husy
- * @date 2020/4/29
+ * @date: 2020/6/18 01:43
  */
-public class ResponseEntity extends LinkedHashMap implements Serializable {
-    private static final String RESULT_KEY_CODE = "code";
-    private static final String RESULT_KEY_MESSAGE = "message";
-    private static final String RESULT_KEY_DATA = "data";
-    private static final String PAGE_KEY_RECORDS = "records";
-    private static final String PAGE_KEY_TOTAL = "total";
-    private static final String PAGE_KEY_SIZE = "size";
-    private static final String PAGE_KEY_CURRENT = "current";
+public class ResponseEntity<T> implements Serializable {
+    private static final long serialVersionUID = 5123047701998541284L;
+
+    private String code;
+    private String message;
+    private T data;
 
     public ResponseEntity() {
-        put(RESULT_KEY_CODE, ResponseCode.SUCCESS.getCode());
-        put(RESULT_KEY_MESSAGE, ResponseCode.SUCCESS.getMessage());
+        this.code = ResponseCode.SUCCESS.getCode();
+        this.message = ResponseCode.SUCCESS.getMessage();
     }
 
-    public ResponseEntity(ResponseCode ResponseCode) {
-        put(RESULT_KEY_CODE, ResponseCode.getCode());
-        put(RESULT_KEY_MESSAGE, ResponseCode.getMessage());
+    public ResponseEntity(ResponseCode responseCode) {
+        this.code = responseCode.getCode();
+        this.message = responseCode.getMessage();
     }
 
-    public ResponseEntity(ResponseCode ResponseCode,String message) {
-        put(RESULT_KEY_CODE, ResponseCode.getCode());
-        put(RESULT_KEY_MESSAGE, message);
+    public ResponseEntity(ResponseCode responseCode, String message) {
+        this.code = responseCode.getCode();
+        this.message = message;
     }
 
     public static ResponseEntity success() {
@@ -46,29 +42,41 @@ public class ResponseEntity extends LinkedHashMap implements Serializable {
         return new ResponseEntity(ResponseCode);
     }
 
-    public static ResponseEntity fail(ResponseCode ResponseCode,String message) {
-        return new ResponseEntity(ResponseCode,message);
+    public static ResponseEntity fail(ResponseCode ResponseCode, String message) {
+        return new ResponseEntity(ResponseCode, message);
     }
 
     public static ResponseEntity error() {
         return new ResponseEntity(ResponseCode.UNKNOWN_ERROR);
     }
 
-    public static ResponseEntity data(Object object) {
+    public static <T> ResponseEntity data(T obj) {
         ResponseEntity apiResult = ResponseEntity.success();
-        apiResult.put(RESULT_KEY_DATA, object);
+        apiResult.data = obj;
         return apiResult;
     }
 
-    public static ResponseEntity page(Page page) {
-        if (page == null) {
-            throw new RuntimeException("The page must not be null");
-        }
-        ResponseEntity apiResult = ResponseEntity.success();
-        apiResult.put(PAGE_KEY_CURRENT, page.getCurrent());
-        apiResult.put(PAGE_KEY_SIZE, page.getSize());
-        apiResult.put(PAGE_KEY_TOTAL, page.getTotal());
-        apiResult.put(PAGE_KEY_RECORDS, page.getRecords());
-        return apiResult;
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }
