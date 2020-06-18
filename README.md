@@ -31,6 +31,8 @@ com.husytool
  │	│	├─ResponseCode              // 自定义API响应码
  │	│	├─ResponseEntity            // 自定义API响应对象
  │	│	├─WebException              // 自定义异常
+ │	├─config
+ │	│	├─JsonConverterConfig       // JSON解析器配置
  │	├─util
  │	│	├─ApplicationContextUtils   // Spring上下文工具类
  │	│	├─HttpServletUtils          // HttpServletRequest 工具处理类
